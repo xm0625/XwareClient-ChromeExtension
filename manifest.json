@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "XwareClient",
+  "description": "迅雷远程下载客户端",
+  "version": "1.0",
+  "icons":
+    {
+      "128": "icons/icon128.png"
+    },
+  "browser_action": {
+    "default_icon": "icons/icon.png"
+  },
+  "permissions": [
+    "notifications",
+    "storage",
+    "activeTab",
+    "tabs",
+    "background",
+    "*://*/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+      "page": "background/background.html"
+  },
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["common/js/jquery/1.11.3/jquery.min.js","common/js/message.js","contentscript/contentScript.js"]
+  }]
+}

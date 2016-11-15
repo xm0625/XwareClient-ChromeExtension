@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>XwareClient-初次使用</title>
+
+    <!-- Bootstrap -->
+    <link href="../../common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10">
+            <h1 class="page-header">创建一个新的配置</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10">
+
+            <form class="form-horizontal">
+                <fieldset>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="control-label col-xs-2" for="configNameInput">配置名称</label>
+                        <div class="controls col-xs-10">
+                            <input type="text" placeholder="如:home" class="form-control" id="configNameInput">
+                            <p class="help-block">任意字符,但不要包含空格</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="control-label col-xs-2" for="remoteUrlInput">代理地址</label>
+                        <div class="controls col-xs-10">
+                            <input type="text" placeholder="xxxx.f3322.net" class="form-control" id="remoteUrlInput">
+                            <p class="help-block">python代理的ip或url(不包含http://)</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="control-label col-xs-2" for="remotePortInput">代理端口</label>
+                        <div class="controls col-xs-10">
+                            <input type="text" placeholder="8000" class="form-control" id="remotePortInput" value="8000">
+                            <p class="help-block">默认8000</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="control-label col-xs-2" for="passwordInput">代理密码</label>
+                        <div class="controls col-xs-10">
+                            <input type="text" placeholder="123456" class="form-control" id="passwordInput" value="123456">
+                            <p class="help-block">代理的访问密码.在xserver.py文件中定义</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="control-label col-xs-2" for="xwareUrlInput">xware地址</label>
+                        <div class="controls col-xs-10">
+                            <input type="text" placeholder="127.0.0.1或192.168.xxx.xxx" class="form-control"  id="xwareUrlInput" value="127.0.0.1">
+                            <p class="help-block">xware服务的ip,该ip需要能被python代理访问</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="control-label col-xs-2" for="xwarePortInput">xware端口</label>
+                        <div class="controls col-xs-10">
+                            <input type="text" placeholder="9000" class="form-control"  id="xwarePortInput" value="9000">
+                            <p class="help-block">默认9000,如被占用 可能自动增加1</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="controls col-xs-offset-2 col-xs-10">
+                            <button class="btn btn-success"  id="saveConfigButton" data-loading-text='正在保存...' >保存并开始使用</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+</div>
+<!-- /.container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../common/js/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../common/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../common/js/message.js"></script>
+<script src="firstRun.js"></script>
+</body>
+</html>
