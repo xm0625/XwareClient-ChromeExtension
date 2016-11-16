@@ -1,0 +1,2 @@
+# XwareClient
+迅雷Xware下载器客户端-Chrome插件.一个脱离迅雷远程服务端直接操控xware的客户端
