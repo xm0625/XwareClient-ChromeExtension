@@ -1,53 +1,50 @@
 # XwareClient-ChromeExtension
-迅雷Xware下载器客户端-Chrome插件。一个脱离迅雷远程服务端直接操控xware的客户端
+  迅雷Xware下载器客户端-Chrome插件。一个脱离迅雷远程服务端直接操控xware的客户端  
 
 简介
 ---
-  1.什么是Xware？
+  1.什么是Xware？  
     在Xware出现之前，Linux环境下无法使用原生的迅雷下载技术（Wine除外），而在国内的大环境下，无法顺畅的使用迅雷下载让广大的Linuxer略感失望。随着智能路由的迅速发展，迅雷意识到智能路由市场的重要性，开发了适用于Linux环境的迅雷远程下载器，主要对象是智能路由等嵌入式设备，也提供x86版本  
-  2.为什么有迅雷远程官网进行任务管理还需要本项目的XwareClient？
-    迅雷远程的官网服务端稳定性不是很好，下载器经常离线、无法添加删除、速度显示不正确；速度显示不够精确；无法集成到浏览器中。
+  2.为什么有迅雷远程官网进行任务管理还需要XwareClient？  
+    *) 迅雷远程的官网服务端稳定性不是很好，下载器经常离线、无法添加删除、速度显示不正确；    
+    *) 速度显示不够精确，速度刷新过慢；  
+    *) 无法集成到浏览器中，无法进行任务的快速添加。  
+  3.为什么是ChromeExtension谷歌浏览器插件版本？  
+    Client的特性之一就是GUI，而可以构建跨平台GUI的方案大致有：java+awt，python+QT， python+Html，chrome插件。开发难度其实都差不多，而易用性最佳的显然就是chrome插件了。  
 
-特点
+主要功能
 ---
-  1.多进程web server  
-  2.cors跨域支持  
-  3.全局异常处理  
-  4.不需要安装额外依赖  
+  1.外网访问家中的下载器(DDNS+端口映射)(服务端增加一个python的proxy server，以解决Xware自带的9000端口端口映射后不能从外网访问的问题)    
+  2.添加/开始/暂停/删除Xware下载任务;  
+  3.下载器总速度显示;  
+  4.自动识别磁力链/ed2k,点击添加任务  
   
+特色
+---
+  1.极小，级轻量;  
+  2.基于Chrome插件的实现形式,完美跨平台(Win,Linux,OSX,chrome OS);  
+  3.更加实时(实时的速度,实时的任务信息),信息更精确，没有任何服务器卡顿和延迟;  
+  4.自动识别magnet磁力链/ed2k链接,点击添加下载务;  
+  5.实时总速度显示(上传总速度&下载总速度).  
+
 环境需求
 ---
-  Python2.6+
+  1.服务端：Python2.6 Python2.7  
+  2.客户端：Chrome浏览器  
   
 如何运行
 ---
-  1.下载项目源码  
-  2.进入项目源码文件夹  
-  3.执行 python app.py  
-  4.访问http://127.0.0.1:8000/xxxx(详见demo中的api定义)  
+  1.下载项目zip包，并解压  
+  2.修改server_deploy/xserver.py中的password，保存并上传到路由器，执行(python xserver.py&)  
+  3.打开谷歌浏览器，依次找到 设置-扩展程序，勾选“开发者模式”，点击“加载已解压的扩展程序...”，找到并选中项目解压目录下的extension_inside目录  
+  4.添加一个配置就可以开始使用了  
 
 参考项目
 ---
-[salimane/bottle-mvc][1]  
-[bottlepy/bottle][2]  
-[muayyad-alsadi/python-PooledProcessMixIn][3]  
-
-如何升级bottle
----
-  因为bottle是单文件的微型python web框架,所以只需要从bottle官网下载bottle.py并替换project目录下的bottle.py即可.  
-  升级bottle后  
-      1.原有demo中的view模板(.tpl文件)可能需要根据新版bottle语法进行更新.  
-      2.原有的demo api 可能由于语法变更而失效,删除皆可  
-
-文档
----
-  参见[Bottle: Python Web Framework][4]
+[Xinkai/XwareDesktop][1]  
 
 License
 ---
   WTFPL. 
 
-  [1]: https://github.com/salimane/bottle-mvc
-  [2]: https://github.com/bottlepy/bottle
-  [3]: https://github.com/muayyad-alsadi/python-PooledProcessMixIn
-  [4]: http://www.bottlepy.org/docs/dev/index.html
+  [1]: https://github.com/Xinkai/XwareDesktop
