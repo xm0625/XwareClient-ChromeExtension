@@ -34,7 +34,7 @@ function detectTaskName(){
         if(downloadLink.indexOf("&dn=") == -1){
             $("#taskName").val("unknown");
         }else{
-            $("#taskName").val(downloadLink.substring(downloadLink.indexOf("&dn=")+"%dn=".length,downloadLink.length));
+            $("#taskName").val(decodeURIComponent(downloadLink.substring(downloadLink.indexOf("&dn=")+"%dn=".length,downloadLink.length)));
         }
     }
     if(downloadLink.startsWith("ed2k://")){
