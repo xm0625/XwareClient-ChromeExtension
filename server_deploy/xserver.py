@@ -1,14 +1,14 @@
 # coding=utf-8
 
-# 解决py2.7中文出现write错误的问题
+# fix zh write bug
 import sys
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-# 解决py2.7中文出现write错误的问题 #
+# fix zh write bug #
 
 # server.py
-# 从wsgiref模块导入:
+# from wsgiref module import:
 from wsgiref.simple_server import make_server
 from cgi import parse_qs, escape
 import urllib
@@ -57,8 +57,8 @@ def app(environ, start_response):
 
     request_method = environ["REQUEST_METHOD"] #GET
     path_info = environ["PATH_INFO"]  # /hi/name/index.action
-    query_string = environ["QUERY_STRING"] # ?后面的东西
-    remote_address = environ["REMOTE_ADDR"] # 访问者ip
+    query_string = environ["QUERY_STRING"]
+    remote_address = environ["REMOTE_ADDR"]
     print "request_method:"+request_method
     print "path_info:"+path_info
     print "remote_address:"+remote_address
@@ -100,8 +100,6 @@ def app(environ, start_response):
     return [response_string]
 
 
-# 创建一个服务器，IP地址为空，端口是8000，处理函数是application:
 httpd = make_server('', 8000, app)
 print "Serving HTTP on port 8000..."
-# 开始监听HTTP请求:
 httpd.serve_forever()
